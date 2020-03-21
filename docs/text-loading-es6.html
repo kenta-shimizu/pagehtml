@@ -7,7 +7,7 @@
 <body>
     <h1>Text-Loading-ES6</h1>
     <script>
-        const textset = [
+        const loadings = [
             "loading",
             "loading .",
             "loading ..",
@@ -15,10 +15,16 @@
         ];
 
         const pp = document.createElement('p');
-        const text = document.createTextNode(textset[0]);
+        const text = document.createTextNode(loadings[0]);
 
         pp.appendChild(text);
         document.body.appendChild(pp);
+
+        let i = 0;
+        setInterval(() => {
+            i = (i + 1) % textset.length;
+            text.data = loadings[i];
+        }, 400);
 
     </script>
 </body>

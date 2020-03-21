@@ -38,6 +38,21 @@
                 text.data = i % 2 ? '' : loadings[i / 2];
             }, 500);
         }
+        {
+            const pp = document.createElement('p');
+            const prefixText = document.createTextNode('loading ');
+            const periodText = document.createTextNode('');
+            pp.appendChild(prefixText);
+            pp.appendChild(periodText);
+            document.body.appendChild(pp);
+
+            let i = 0;
+            const m = 3;
+            setInterval(() => {
+                i = (i + 1) % (m * 2);
+                periodText.data = i % 2 ? '' : '.'.repeat(i / 2);
+            }, 500);
+        }
 
     </script>
 </body>

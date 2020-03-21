@@ -16,7 +16,7 @@
 
         {
             const pp = document.createElement('p');
-            const text = document.createTextNode('');
+            const text = document.createTextNode(loadings[0]);
             pp.appendChild(text);
             document.body.appendChild(pp);
 
@@ -26,9 +26,10 @@
                 text.data = loadings[i];
             }, 500);
         }
+
         {
             const pp = document.createElement('p');
-            const text = document.createTextNode('');
+            const text = document.createTextNode(loadings[0]);
             pp.appendChild(text);
             document.body.appendChild(pp);
 
@@ -38,6 +39,7 @@
                 text.data = i % 2 ? '' : loadings[i / 2];
             }, 500);
         }
+
         {
             const pp = document.createElement('p');
             const prefixText = document.createTextNode('loading ');

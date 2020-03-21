@@ -14,17 +14,30 @@
             "loading ..."
         ];
 
-        const pp = document.createElement('p');
-        const text = document.createTextNode(loadings[0]);
+        {
+            const pp = document.createElement('p');
+            const text = document.createTextNode('');
+            pp.appendChild(text);
+            document.body.appendChild(pp);
 
-        pp.appendChild(text);
-        document.body.appendChild(pp);
+            let i = 0;
+            setInterval(() => {
+                i = (i + 1) % loadings.length;
+                text.data = loadings[i];
+            }, 500);
+        }
+        {
+            const pp = document.createElement('p');
+            const text = document.createTextNode('');
+            pp.appendChild(text);
+            document.body.appendChild(pp);
 
-        let i = 0;
-        setInterval(() => {
-            i = (i + 1) % loadings.length;
-            text.data = loadings[i];
-        }, 400);
+            let i = 0;
+            setInterval(() => {
+                i = (i + 1) % (loadings.length * 2);
+                text.data = i % 2 ? '' : loadings[i / 2];
+            }, 500);
+        }
 
     </script>
 </body>

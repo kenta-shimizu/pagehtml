@@ -7,7 +7,19 @@
 <body>
     <h1>Text-Loading-ES6</h1>
     <script>
-        window.alert("in");
+        const textset = [
+            "loading",
+            "loading .",
+            "loading ..",
+            "loading ..."
+        ];
+
+        const pp = document.createElement('p');
+        const text = document.createTreeWalker(textset[0]);
+
+        pp.appendChild(text);
+        document.body.appendChild(pp);
+
     </script>
 </body>
 </html>
